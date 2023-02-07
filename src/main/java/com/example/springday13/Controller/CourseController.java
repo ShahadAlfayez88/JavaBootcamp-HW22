@@ -51,4 +51,10 @@ public class CourseController {
         return ResponseEntity.status(200).body("Course is assigned ");
 
     }
+    @GetMapping("/getTeacherName/{course_id}")
+    public ResponseEntity getTeacherName(@PathVariable Integer course_id){
+        String name = courseService.getTeacherName(course_id);
+        return ResponseEntity.status(200).body(name);
+    }
+
 }

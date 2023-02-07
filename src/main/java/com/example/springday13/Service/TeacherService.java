@@ -41,5 +41,14 @@ public class TeacherService {
         teacherRepository.delete(teacher);
     }
 
+    // get teacher
+    public Teacher getTeacherInfo(Integer id) {
+        Teacher teacher = teacherRepository.findTeacherById(id);
+        if (!teacherRepository.existsById(id)) {
+            throw new ApiException("Id is not found");
+        }
+        return teacher;
+    }
+
 
 }

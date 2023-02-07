@@ -45,7 +45,7 @@ public class CourseController {
     }
 
     // assign
-    @GetMapping("/assignBranch/{teacher_id}/{course_id}")
+    @GetMapping("/assignCourse/{teacher_id}/{course_id}")
     public ResponseEntity assignCourse(@PathVariable Integer teacher_id, @PathVariable Integer course_id){
         courseService.assignCourse(teacher_id,course_id);
         return ResponseEntity.status(200).body("Course is assigned ");

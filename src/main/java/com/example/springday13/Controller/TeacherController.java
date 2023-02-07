@@ -27,6 +27,15 @@ public class TeacherController {
         return ResponseEntity.status(200).body(teachers);
     }
 
+    // get teacher info
+
+    @GetMapping("/getInfo/{id}")
+    public ResponseEntity getTeacherInfo(@PathVariable Integer id){
+        Teacher teacher = teacherService.getTeacherInfo(id);
+        return ResponseEntity.status(200).body(teacher);
+    }
+
+
     //Add
     @PostMapping("/add")
     public ResponseEntity addTeacher(@Valid @RequestBody Teacher teacher){

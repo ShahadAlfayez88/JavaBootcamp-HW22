@@ -18,10 +18,10 @@ public class Branch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull
+    @NotNull(message = "number field is required")
     private Integer number;
 
-    @NotEmpty
+    @NotEmpty(message = "area field is required")
     private String area;
 
     @ManyToOne

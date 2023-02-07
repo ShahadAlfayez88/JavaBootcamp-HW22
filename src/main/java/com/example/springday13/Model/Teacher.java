@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.List;
@@ -18,16 +19,17 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty
+    @NotEmpty(message = "name field is required")
     private String name ;
 
-    @NonNull
+    @NotNull(message = "age field is required")
+    @Min(0)
     private int age;
-    @NotEmpty
-    @Email
+    @NotEmpty(message = "email field is required")
+    @Email(message = "please enter a valid email")
     private String email ;
 
-    @NonNull
+    @NotNull(message = "Salary field is required")
     @Min(5000)
     private int salary;
 

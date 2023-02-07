@@ -18,7 +18,7 @@ public class Merchant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty
+    @NotEmpty(message = "name field is required")
     private String name ;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "merchant")
